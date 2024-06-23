@@ -1,0 +1,4 @@
+node_modules
+api_key.json
+bulk_indexes.json
+elastic.env

@@ -1,0 +1,1 @@
+curl -u enterprise_search:uhUj8T6SVJif7CC -X POST "https://c2e409fb37984fbd95e95bb73fa52276.us-central1.gcp.cloud.es.io:443/_bulk?pretty" -H "Authorization: ApiKey Y21LZUdwQUIwTTFGXzlsVDNJQUQ6VW9QenQySWxSbG1GLVhqUEpoaE5EUQ==" -H "Content-Type: application/x-ndjson" --data-binary @/home/thaihuy/CodingWorkspace/epub_extract_data/bulk_indexes.json
