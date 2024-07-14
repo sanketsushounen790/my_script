@@ -3,15 +3,16 @@ const { v4: uuidv4 } = require('uuid');
 
 const fs = require('fs');
 
-const path = './bulk_indexes.json';
+const jsonFileName = "test.json"
+const booksDirectoryName = "books_2_renamed"
 
-fs.readdir('./books', (err, files) => {
+fs.readdir(`./${booksDirectoryName}`, (err, files) => {
     if (err) throw err;
 
     files.map((book) => {
         //console.log(book)
 
-        EPub.createAsync(`./books/${book}`)
+        EPub.createAsync(`./${booksDirectoryName}/${book}`)
             .then(function (epub) {
                 //console.log(epub.metadata)
                 if (epub.toc.length === 0) {
@@ -28,15 +29,16 @@ fs.readdir('./books', (err, files) => {
                             author: epub.metadata.creator,
                             book_title: epub.metadata.title,
                             date: epub.metadata.date,
+                            aws_s3_bucket_url: `https://bookrecognition.s3.ap-southeast-1.amazonaws.com/${book}`
                         }
 
-                        if (fs.existsSync("bulk_indexes.json")) {
-                            fs.appendFileSync(path, JSON.stringify(index, null) + "\r\n")
-                            fs.appendFileSync(path, JSON.stringify(document, null) + "\r\n")
+                        if (fs.existsSync(jsonFileName)) {
+                            fs.appendFileSync(`./${jsonFileName}`, JSON.stringify(index, null) + "\r\n")
+                            fs.appendFileSync(`./${jsonFileName}`, JSON.stringify(document, null) + "\r\n")
                         }
                         else {
-                            fs.writeFileSync(path, JSON.stringify(index, null) + "\r\n")
-                            fs.writeFileSync(path, JSON.stringify(document, null) + "\r\n")
+                            fs.writeFileSync(`./${jsonFileName}`, JSON.stringify(index, null) + "\r\n")
+                            fs.writeFileSync(`./${jsonFileName}`, JSON.stringify(document, null) + "\r\n")
                         }
 
                     })

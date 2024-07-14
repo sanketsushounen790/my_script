@@ -1,1 +1,17 @@
 curl -u enterprise_search:uhUj8T6SVJif7CC -X POST "https://c2e409fb37984fbd95e95bb73fa52276.us-central1.gcp.cloud.es.io:443/_bulk?pretty" -H "Authorization: ApiKey Y21LZUdwQUIwTTFGXzlsVDNJQUQ6VW9QenQySWxSbG1GLVhqUEpoaE5EUQ==" -H "Content-Type: application/x-ndjson" --data-binary @/home/thaihuy/CodingWorkspace/epub_extract_data/bulk_indexes.json
+
+curl -u elastic:UaEmx6uic8fCwKaYabvh -H "Content-Type: application/json" -XPOST 'http://localhost:9200/_bulk' --data-binary @/path/to/bulk_indexes.json
+
+curl -u elastic:UaEmx6uic8fCwKaYabvh -XPOST 'https://172.18.0.2:9200/_bulk?pretty' -H "Authorization: ApiKey IRaRyXa5RRSuENQUFbaoBw" -H "Content-Type: application/x-ndjson" --data-binary C:\Users\PC\Desktop\Workspace\my_script\bulk_indexes.json
+
+-u elastic:51kyzyaBvwRs9cZJv_93 -XPOST 'https://localhost:9200/books/_bulk?pretty' -H "Authorization: ApiKey enBzaGg1QUJ6RDZJd0llaHh5dDQ6YXhPU3YzX1VRWkt5UnlLdml1WTVJUQ==" -H "Content-Type: application/x-ndjson" --data-binary C:\Users\PC\Desktop\Workspace\my_script\bulk_indexes.json -v -k
+
+
+## Test connection
+curl "https://localhost:9200/books?pretty" -H "Authorization: ApiKey aiIiezkxTHCypGiiGwcRog" -H "Content-Type: application/json"
+
+curl -XPOST "https://localhost:9200/books/_bulk?pretty" -v -k -H "Authorization: ApiKey enBzaGg1QUJ6RDZJd0llaHh5dDQ6YXhPU3YzX1VRWkt5UnlLdml1WTVJUQ==" -H "Content-Type: application/x-ndjson" --data-binary "@C:\Users\PC\Desktop\Workspace\my_script\bulk_indexes.json"
+
+curl -XPOST "http://localhost:9200/books/_bulk?pretty" -H "Content-Type: application/x-ndjson" --data-binary "@C:\Users\PC\Desktop\Workspace\my_script\bulk_indexes.json"
+
+curl -XPOST "http://localhost:9200/books/_bulk?pretty" -H "Content-Type: application/x-ndjson" --data-binary "@C:\Users\PC\Desktop\Workspace\my_script\test.json"
