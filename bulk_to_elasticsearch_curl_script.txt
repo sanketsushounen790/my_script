@@ -14,4 +14,4 @@ curl -XPOST "https://localhost:9200/books/_bulk?pretty" -v -k -H "Authorization:
 
 curl -XPOST "http://localhost:9200/books/_bulk?pretty" -H "Content-Type: application/x-ndjson" --data-binary "@C:\Users\PC\Desktop\Workspace\my_script\bulk_indexes.json"
 
-curl -XPOST "http://localhost:9200/books/_bulk?pretty" -H "Content-Type: application/x-ndjson" --data-binary "@C:\Users\PC\Desktop\Workspace\my_script\test.json"
+curl -XPOST "http://localhost:9200/books/_bulk?pretty" -H "Content-Type: application/x-ndjson" --data-binary "@C:\Users\PC\Desktop\Workspace\my_script\bulk_indexes.json"
